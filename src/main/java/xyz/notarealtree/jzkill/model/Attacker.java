@@ -26,5 +26,5 @@ public interface Attacker {
     @JsonProperty("ship_type_id")
     long getShipTypeId();
     @JsonProperty("weapon_type_id")
-    long getWeaponTypeId();
+    Optional<Long> getWeaponTypeId();
 }
