@@ -1,0 +1,19 @@
+group 'xyz.notarealtree.jzkill'
+version '0.0.1'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.mashape.unirest', name: 'unirest-java', version: '1.4.9'
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.8.0-beta2'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.9.5'
+    compile 'org.immutables:value:2.5.6'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
