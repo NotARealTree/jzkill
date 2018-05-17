@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 
+import java.util.Optional;
+
 @Value.Immutable
 @JsonDeserialize(as = ImmutableItem.class)
 @JsonSerialize(as = ImmutableItem.class)
@@ -16,7 +18,7 @@ public interface Item {
     @JsonProperty("item_type_id")
     long getItemTypeId();
     @JsonProperty("quantity_dropped")
-    long getQuantityDropped();
+    Optional<Long> getQuantityDropped();
     @JsonProperty("singleton")
     long singleton();
 }
