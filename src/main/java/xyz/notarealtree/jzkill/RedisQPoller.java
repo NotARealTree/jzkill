@@ -15,12 +15,19 @@ import java.util.Optional;
 
 public class RedisQPoller {
     private static final Logger log = LoggerFactory.getLogger(RedisQPoller.class);
-    private static final String REDIS_Q_URL = "https://redisq.zkillboard.com/listen.php";
+    private final String REDIS_Q_URL;
     private final ObjectMapper objectMapper;
 
     public RedisQPoller() {
-        objectMapper = new ObjectMapper();
-        objectMapper.registerModule(new Jdk8Module());
+        this.objectMapper = new ObjectMapper();
+        this.objectMapper.registerModule(new Jdk8Module());
+        this.REDIS_Q_URL = "https://redisq.zkillboard.com/listen.php";
+    }
+
+    public RedisQPoller(String queueId) {
+        this.objectMapper = new ObjectMapper();
+        this.objectMapper.registerModule(new Jdk8Module());
+        this.REDIS_Q_URL = String.format("https://redisq.zkillboard.com/listen.php?queueID=%s", queueId);
     }
 
     public Optional<Package> poll() {

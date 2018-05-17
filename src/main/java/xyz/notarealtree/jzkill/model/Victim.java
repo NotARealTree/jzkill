@@ -15,7 +15,7 @@ public interface Victim {
     @JsonProperty("alliance_id")
     Optional<Long> getAllianceId();
     @JsonProperty("character_id")
-    long getCharacterId();
+    Optional<Long> getCharacterId();
     @JsonProperty("corporation_id")
     long getCorporationId();
     @JsonProperty("damage_taken")
