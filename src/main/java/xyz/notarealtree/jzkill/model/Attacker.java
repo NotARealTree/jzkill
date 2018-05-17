@@ -24,7 +24,7 @@ public interface Attacker {
     @JsonProperty("security_status")
     Optional<Double> getSecurityStatus();
     @JsonProperty("ship_type_id")
-    long getShipTypeId();
+    Optional<Long> getShipTypeId();
     @JsonProperty("weapon_type_id")
     Optional<Long> getWeaponTypeId();
 }
