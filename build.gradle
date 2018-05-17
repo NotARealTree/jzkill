@@ -2,11 +2,29 @@ group 'xyz.notarealtree.jzkill'
 version '0.0.1'
 
 apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
 
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
+    }
+}
+
+shadowJar {
+    baseName = 'jzkill'
+    classifier = ''
+    version = project.version
 }
 
 dependencies {
