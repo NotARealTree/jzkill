@@ -4,6 +4,16 @@
 ZKillBoard RedisQ Java Consumer
 
 Include this in your gradle file by adding
+
+JZkill is available on [Bintray](https://bintray.com/notarealtree/jzkill/jzkill). 
+
+To add JZkill to your project, add `jcenter` as one of your repositories in your gradle file
 ```
-compile 'xyz.notarealtree:jzkill:0.0.9'
+repositories {
+    jcenter()
+}
+```
+And add the actual package to your dependencies:
+```
+compile 'xyz.notarealtree:jzkill:<VERSION>'
 ```
