@@ -5,12 +5,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.immutables.value.Value;
 
+import java.util.Optional;
+
 @Value.Immutable
 @JsonDeserialize(as = ImmutableZkb.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public interface Zkb {
     @JsonProperty("locationID")
-    long getLocationId();
+    Optional<Long> getLocationId();
     @JsonProperty("hash")
     String getHash();
     @JsonProperty("fittedValue")
